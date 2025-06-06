@@ -53,14 +53,13 @@ export default function Home() {
               </div>
             </div>
             <div className="grid place-content-end">
-              <LandingImage
-                noPreload
-                priority
-                src="homeMock1"
+              <img
+                loading="eager"
+                src="/mocks/home-mock-1.webp"
                 alt="home-mock-1"
                 className="lg:translate-x-12 w-full h-auto px-10 translate-y-10"
-                width={800}
-                height={800}
+                width={1500}
+                height={1500}
               />
             </div>
 
