@@ -55,7 +55,7 @@ const ParallaxGalleryBanner = () => {
     <section
       ref={container}
       className={twMerge(
-        "h-[300vh] relative bg-gradient-to-b from-secondary  to-secondary-lighter"
+        "h-[300vh] relative bg-gradient-to-b from-secondary  to-secondary-lighter  section-mt section-pt"
       )}
     >
       <div className={twMerge("sticky overflow-hidden top-0 h-screen")}>

@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { LINK_ITEMS } from "./LinksItems";
 import Text from "../Text/Text";
 import GradientBackground from "../AnimatedBackgrounds/GradientBackground";
-import MagneticContainer from "../Buttons/MagneticContainer";
 
 export interface NavBarProps {}
 
@@ -49,18 +48,18 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
       >
         <motion.div
           animate={{
-            width: isScrolled ? "60px" : "80px",
+            width: isScrolled ? "150px" : "200px",
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:w-[80px] z-[80] md:z-0 cursor-pointer hover:text-accent"
+          className="md:w-[200px] z-[80] md:z-0 cursor-pointer hover:text-accent"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <LandingImage
             alt="logo"
             src="default_logo"
             className=""
-            width={80}
-            height={80}
+            width={200}
+            height={200}
           />
         </motion.div>
         <button

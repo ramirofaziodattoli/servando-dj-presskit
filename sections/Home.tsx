@@ -21,21 +21,19 @@ export default function Home() {
     >
       <GradientBackground
         followCursor
-        containerClassName="min-h-screen  pt-[100px] overflow-hidden bg-secondary"
+        containerClassName="min-h-screen xl:h-screen  pt-[100px] xl:pt-0 overflow-hidden bg-secondary"
       >
         <div className="w-full h-full flex flex-col section-px lg:!px-0 lg:!pl-20 2xl:!px-20 section-max-w mx-auto">
           <div className="flex-1 grid lg:grid-cols-2 gap-10 lg:gap-0 h-full min-h-[calc(100vh-100px)]">
             <div className="w-full h-full flex flex-col justify-center items-center lg:items-start gap-5 pt-10 lg:pb-20">
-              <LocationText col className="lg:hidden" />
               <Text
                 Tag={"h1"}
                 variant="custom"
                 className="text-7xl md:text-[150px]/30 lg:text-[130px]/30 xl:text-[200px]/40 lg:text-left relative w-fit"
               >
-                DJ <br className="hidden lg:block" />
                 {DJ_INFO.name}
-                <LocationText className="absolute top-10 right-0 xl:right-10 hidden lg:block" />
               </Text>
+              <p className="text-accent">Electronic Music</p>
               <Text variant="content" className="">
                 {DJ_INFO.shortBio}
               </Text>

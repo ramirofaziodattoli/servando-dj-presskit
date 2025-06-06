@@ -94,7 +94,7 @@ export default function InifiniteCarrousel({
       return Map?.map((text, index) => (
         <span
           key={index}
-          className="text-secondary text-md md:text-xl font-bold uppercase inline-flex items-center h-full"
+          className="text-secondary text-md md:text-xl font-bold uppercase inline-flex items-center h-full whitespace-nowrap"
         >
           <span className="px-4">{text}</span>
           <span className="opacity-50">•</span>
@@ -106,7 +106,7 @@ export default function InifiniteCarrousel({
           <img
             src={src}
             alt={`Logo ${index}`}
-            className="min-w-[100px] md:min-w-[200px] h-full mx-10"
+            className="min-w-[100px] md:min-w-[200px] h-full mx-5 drop-shadow-2xl mix-blend-lighten"
           />
         </span>
       ));

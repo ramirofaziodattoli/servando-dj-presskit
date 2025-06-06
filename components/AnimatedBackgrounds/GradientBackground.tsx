@@ -11,7 +11,7 @@ interface GradientBackgroundProps {
   followCursor?: boolean;
 }
 
-const DEFAULT_COLORS = ["#c83232", "#dd4aff", "#64dcff", "#b4b432"];
+const DEFAULT_COLORS = ["#3B6A9D", "#3B6A9D", "#FFFFFF", "#3B6A9D"];
 export default function GradientBackground({
   children,
   className,

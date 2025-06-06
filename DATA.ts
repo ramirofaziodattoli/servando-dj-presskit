@@ -5,8 +5,8 @@ export const DJ_INFO = {
   driveUrl:
     "https://drive.google.com/drive/folders/1tRodJSvXH1ty4YadSt8jNFFYJXFBgHhN?usp=sharing",
   name: "SERVANDO",
-  email: "servandomusic@hotmail.coms",
-  location: "Pergamino, Buenos Aires, Argentina ",
+  email: "servandomusic@hotmail.com",
+  location: "Buenos Aires, Argentina ",
   eventTypes:
     "Fiesta privada, Club nocturno, Festival, Evento al aire libre, After party",
   shortBio:
