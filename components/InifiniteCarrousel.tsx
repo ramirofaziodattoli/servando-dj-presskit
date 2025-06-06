@@ -21,7 +21,7 @@ export default function InifiniteCarrousel({
 
     const loadImages = async () => {
       const checks = await Promise.all(
-        Array.from({ length: 4 }).map((_, index) => {
+        Array.from({ length: 15 }).map((_, index) => {
           const imgSrc = `/logos/public/public-${index}.svg`;
           return new Promise<string | null>((resolve) => {
             const img = new Image();
@@ -69,7 +69,7 @@ export default function InifiniteCarrousel({
 
       tl.to(container, {
         x: `-${contentWidth}`,
-        duration: 15,
+        duration: publicLogos ? 30 : 15,
         ease: "none",
         repeat: -1,
         onRepeat: () => {
@@ -102,11 +102,11 @@ export default function InifiniteCarrousel({
       ));
     } else {
       return validLogos.map((src, index) => (
-        <span key={index} className="inline-flex items-center h-full">
+        <span key={index} className="inline-flex items-center h-full py-2">
           <img
             src={src}
             alt={`Logo ${index}`}
-            className="min-w-[100px] md:min-w-[200px] h-full mx-5 drop-shadow-2xl mix-blend-lighten"
+            className="min-w-[100px] md:min-w-[200px] h-full mx-5 drop-shadow-2xl"
           />
         </span>
       ));
