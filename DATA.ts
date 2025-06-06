@@ -3,35 +3,52 @@ import { images } from "./assets";
 
 export const DJ_INFO = {
   driveUrl:
-    "https://drive.google.com/drive/folders/18A6VI-ipyeiOF3wdf6mGPMO8916wplLG?usp=sharing",
-  name: "JOHN DOE",
-  email: "hello@johndoe.com",
-  location: "bariloche, argentina",
-  eventTypes: "Clubes, Festivales o Eventos Privados",
+    "https://drive.google.com/drive/folders/1tRodJSvXH1ty4YadSt8jNFFYJXFBgHhN?usp=sharing",
+  name: "SERVANDO",
+  email: "servandomusic@hotmail.coms",
+  location: "Pergamino, Buenos Aires, Argentina ",
+  eventTypes:
+    "Fiesta privada, Club nocturno, Festival, Evento al aire libre, After party",
   shortBio:
-    "DJ underground de Bariloche, Argentina. Fusiona Techno, Hardcore, Trance y Freestyle en sets potentes. Más de 11 años de experiencia y más de 60 presentaciones en clubes, festivales y eventos privados.",
+    "Servando es un DJ y productor argentino en ascenso dentro de la escena global de la música electrónica. Su enfoque sofisticado y versátil le permite moverse entre los generos, logrando un sonido único y adaptable a cualquier pista.",
   longBio:
-    "John Doe es un DJ underground y apasionado de la música electrónica radicado en Bariloche, Argentina, conocido por fusionar potentes sonidos de Techno, Hardcore, Trance e influencias Freestyle en sets cargados de energía.\n\nCon más de 11 años de experiencia y más de 60 presentaciones, ha recorrido clubes, fiestas privadas y festivales, destacándose por su intensidad y presencia en cabina.\n\nSu estilo se caracteriza por beats agresivos y transiciones envolventes, creando viajes sonoros que reflejan su identidad y fuerza creativa. Desde clubes íntimos hasta grandes escenarios, John Doe transforma cada show en una experiencia inolvidable para quienes buscan más que solo música: buscan conexión, ritmo y energía sin límites.",
+    "Servando es un DJ y productor argentino en ascenso dentro de la escena global de la música electrónica. Su enfoque sofisticado y versátil le permite moverse entre los generos, logrando un sonido único y adaptable a cualquier pista.\n\nHa compartido cabina con artistas como Ezequiel Arias, Budakid, Emi Galván, Jonh Cosani, Grazziano Raffa y muchos màs. Ha tocado en clubes y festivales de primer nivel.\n\nSus producciones son editadas por sellos como Mango Alley, Sound Avenue, SLC-6 y màs. Sus tracks que resaltan la versatilidad de Servando, hicieron vibrar multitudes en festivales masivos como We Are Lost, Anjuna Deep Explorations, Brunch, The Soundgarden, Mirage, entre otros. Figuras como Hernán Cattáneo, Ezequiel Arias, Tantum, Sahar Z, Mariano Mellino, Eli Nissan y muchos mas están apoyado su música, consolidando su proyección internacional.\n\nEl joven productor esta trabajando constantemente en su sonido, para exportarlo a al mundo y poder hacer llegar su identidad sonora a los oyentes.",
   socials: [
-    { icon: "instagram", url: "#" },
-    { icon: "spotify", url: "#" },
-    { icon: "soundcloud", url: "#" },
+    { icon: "instagram", url: "https://www.instagram.com/servandomusic/" },
+    {
+      icon: "spotify",
+      url: "https://open.spotify.com/intl-es/artist/4IL2O8cWbVRcuuhKbuJOJ1",
+    },
+    { icon: "soundcloud", url: "https://soundcloud.com/servando_music " },
   ],
-  genres: ["TECHNO", "HARDCORE", "TRANCE", "FREESTYLE"],
-  yearsOfExperience: 11,
-  totalEvents: 62,
-  mixedMinutes: 8912,
+  genres: [
+    "HOUSE",
+    "TECHNO",
+    "DEEP HOUSE",
+    "PROGRESSIVE HOUSE",
+    "DUB TECHNO",
+    "INDIE DANCE",
+  ],
+  yearsOfExperience: 12,
+  totalEvents: 150,
+  mixedMinutes: 45825,
 };
 
 export const TECHNICAL_RIDER: TechnicalRiderElement[] = [
   {
-    title: "Player 1",
+    title: "Player",
     name: "CDJ - 3000",
     img: images.CDJ_3000,
     detail: "Linkeada y actualizada con el último firmware",
   },
   {
-    title: "Player 2",
+    title: "Player",
+    name: "CDJ - 3000",
+    img: images.CDJ_3000,
+    detail: "Linkeada y actualizada con el último firmware",
+  },
+  {
+    title: "Player",
     name: "CDJ - 3000",
     img: images.CDJ_3000,
     detail: "Linkeada y actualizada con el último firmware",
@@ -41,23 +58,5 @@ export const TECHNICAL_RIDER: TechnicalRiderElement[] = [
     name: "DJM - V10",
     img: images.DJM_V10,
     detail: "Actualizada con el último firmware",
-  },
-  {
-    title: "REMIX STATION",
-    name: "RMX - 1000",
-    img: images.RMX_1000,
-    detail: "Conectada al Send/Return del mixer",
-  },
-  {
-    title: "Player 3",
-    name: "CDJ - 3000",
-    img: images.CDJ_3000,
-    detail: "Linkeada y actualizada con el último firmware",
-  },
-  {
-    title: "Player 4",
-    name: "CDJ - 3000",
-    img: images.CDJ_3000,
-    detail: "Linkeada y actualizada con el último firmware",
   },
 ];
