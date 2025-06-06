@@ -11,7 +11,7 @@ const serviceAccountAuth = new JWT({
 
 const SPREADSHEET_ID =
   process.env.GOOGLE_SHEET_EVENTS_ID ??
-  "1oeoiQAeKnX-wVZlxqZ2XTf68s2eZx2Ebyfm3ltRARBk";
+  "1edKQA1C2PnIP6vgmVowLjtAC2S-8pT08U18imzc5xlQ";
 const SHEET_NAME = "Hoja 1";
 
 export async function GET() {
