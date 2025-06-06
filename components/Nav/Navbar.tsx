@@ -51,10 +51,11 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
           className="w-full max-w-[150px] md:max-w-[250px] h-full z-[80] md:z-0 cursor-pointer hover:text-accent"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <img
+          <LandingImage
             alt="logo"
-            src="/logos/default-logo.svg"
+            src="default_logo"
             className="w-full h-full object-cover"
+            fill
             sizes="250px"
           />
         </motion.div>

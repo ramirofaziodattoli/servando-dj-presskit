@@ -21,7 +21,7 @@ export const backgrounds = {
 export type BackgroundsKey = keyof typeof backgrounds;
 
 export const logos = {
-  default_logo: "/logos/default-logo.svg",
+  default_logo: "/logos/default-logo.png",
   landing_banner_logo: "/logos/landing-banner-logo.png",
 
   //? Agregar mas logos aca
