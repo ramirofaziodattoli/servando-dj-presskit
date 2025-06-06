@@ -107,10 +107,9 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageIndex }) => {
     <div
       ref={ref}
       className={twMerge(
-        "w-[50vw] h-[60%] snap-start relative overflow-hidden grid place-items-center",
-        imageIndex === 8 && "ml-10 !w-[30vw]",
-        imageIndex % 2 && "-translate-y-14",
-        imageIndex % 2 === 0 && "translate-y-20 w-[70vw]"
+        "w-[40vw] h-[70%] snap-start relative overflow-hidden grid place-items-center",
+        imageIndex === 8 && "ml-10 !w-[60vw]",
+        imageIndex % 2 && "-translate-y-14"
       )}
     >
       <motion.div style={{ translateX }} className="w-[160%] h-full">
@@ -120,7 +119,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ imageIndex }) => {
           sizes="1200px"
           src={`/images/gallery/image-${imageIndex + 1}.webp` as ImagesKey}
           alt={`image-${imageIndex}`}
-          className="object-cover object-center"
+          className="object-contain object-center"
         />
       </motion.div>
     </div>

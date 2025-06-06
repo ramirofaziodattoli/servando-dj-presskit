@@ -39,7 +39,7 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
       )}
     >
       <motion.section
-        animate={{ height: isScrolled ? "60px" : "80px" }}
+        animate={{ height: isScrolled ? "80px" : "100px" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={twMerge(
           "flex justify-between w-full section-max-w mx-auto section-px relative items-center",
@@ -47,19 +47,16 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
         )}
       >
         <motion.div
-          animate={{
-            width: isScrolled ? "150px" : "200px",
-          }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:w-[200px] z-[80] md:z-0 cursor-pointer hover:text-accent"
+          className="w-full max-w-[150px] md:max-w-[250px] h-full z-[80] md:z-0 cursor-pointer hover:text-accent"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <LandingImage
             alt="logo"
             src="default_logo"
-            className=""
-            width={200}
-            height={200}
+            className="w-full h-full object-cover"
+            fill
+            sizes="250px"
           />
         </motion.div>
         <button

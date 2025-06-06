@@ -19,15 +19,15 @@ export default function About() {
       />
       <RouteID id={appRoutes.whoIAm} />
       <div className="pt-[50px] lg:pb-[50px] overflow-hidden">
-        <GradientBackground containerClassName="backdrop-blur-xs  absolute section-mx mx-auto lg:!mx-0 lg:max-w-[600px]">
+        <div className="backdrop-blur-xs  absolute section-mx mx-auto lg:!mx-0 lg:max-w-[600px]">
           <LandingImage
-            src="homeMock1"
+            src="homeMock2"
             alt="mock-2"
             className="relative w-full h-full object-cover"
-            width={600}
-            height={600}
+            width={1500}
+            height={1500}
           />
-        </GradientBackground>
+        </div>
         <div className="w-full section-max-w mx-auto pt-[100px] md:pt-[150px] lg:pl-[25%] 2xl:pl-[20%] lg:!pr-20 pointer-events-none h-[700px] md:h-[750px]">
           <div className="flex items-center section-px py-10 lg:px-40 justify-center gap-10 flex-col bg-gradient-to-t lg:bg-gradient-to-tr lg:p-20 from-secondary via-secondary/80  to-secondary/10 backdrop-blur-xs h-full">
             <div className="">
@@ -48,6 +48,7 @@ export default function About() {
                   endValue={DJ_INFO.yearsOfExperience}
                 />
                 <CounterBlock
+                  showMore
                   desc="Eventos realizados"
                   endValue={DJ_INFO.totalEvents}
                 />
@@ -69,15 +70,16 @@ export default function About() {
           text={"DJ " + DJ_INFO.name}
           className="absolute top-2 -z-5 left-0 lg:-translate-x-[100vw] xl:-translate-x-[60vw] 2xl:-translate-x-[50vw]"
         />
-        <GradientBackground containerClassName="backdrop-blur-xs absolute section-mx mx-auto lg:!mx-0 lg:max-w-[600px] lg:right-0">
+        <div className="backdrop-blur-xs absolute section-mx mx-auto lg:!mx-0 lg:max-w-[600px] lg:right-0">
           <LandingImage
-            src="homeMock1"
+            src="homeMock3"
             alt="mock-2"
             className="relative z-10 w-full h-full object-cover"
-            width={600}
-            height={600}
+            style={{ filter: "contrast(1.2) brightness(0.8)" }}
+            width={1500}
+            height={1500}
           />
-        </GradientBackground>
+        </div>
         <div className="w-full section-max-w mx-auto pt-[100px] md:pt-[150px] lg:pr-[25%] 2xl:pr-[20%] lg:!pl-20 pointer-events-none min-h-[700px] md:h-[750px]">
           <div className="flex items-center section-px py-10 lg:px-40 justify-center gap-10 flex-col bg-gradient-to-t lg:bg-gradient-to-tl lg:p-20 from-secondary via-secondary/80  to-secondary/10 backdrop-blur-xs h-full">
             <div>
@@ -114,7 +116,7 @@ const TextBlock: React.FC<{ title: string; desc: string }> = ({
       >
         {title}
       </Text>
-      <Text variant="content" className="lg:text-left capitalize" Tag={"p"}>
+      <Text variant="content" className="lg:text-left" Tag={"p"}>
         {desc}
       </Text>
     </div>

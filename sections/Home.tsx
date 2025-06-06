@@ -1,5 +1,5 @@
 "use client";
-import { LogosKeys } from "@/assets";
+import { IconKey, LogosKeys } from "@/assets";
 import Icon from "../components/Icons/Icon";
 import LandingImage from "../components/Images/LandingImage";
 import Text from "../components/Text/Text";
@@ -42,9 +42,9 @@ export default function Home() {
                   <MagneticContainer key={index}>
                     <LandingLink href={url} newTab key={index}>
                       <Icon
-                        src={icon as LogosKeys}
+                        src={icon as IconKey}
                         className={twMerge(
-                          "text-accent size-12 hover:text-white"
+                          "text-accent size-[50px] hover:text-white"
                         )}
                       />
                     </LandingLink>

@@ -106,7 +106,7 @@ export default function InifiniteCarrousel({
           <img
             src={src}
             alt={`Logo ${index}`}
-            className="min-w-[100px] md:min-w-[200px] h-full mx-5 drop-shadow-2xl"
+            className="min-w-[100px] md:min-w-[200px] h-full mx-5"
           />
         </span>
       ));

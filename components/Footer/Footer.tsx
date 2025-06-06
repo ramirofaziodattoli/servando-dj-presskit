@@ -30,7 +30,9 @@ const Content = () => {
               <LandingLink href={url} newTab key={index}>
                 <Icon
                   src={icon as LogosKeys}
-                  className={twMerge("text-accent size-12 hover:text-white")}
+                  className={twMerge(
+                    "text-accent size-[50px] hover:text-white"
+                  )}
                 />
               </LandingLink>
             </MagneticContainer>

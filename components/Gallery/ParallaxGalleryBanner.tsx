@@ -74,12 +74,13 @@ const ParallaxGalleryBanner = () => {
               <div
                 className={twMerge(
                   "relative w-[25vw] h-[25vh]",
-                  i === 1 && "-top-[30vh] left-[5vw] w-[35vw] h-[30vh]",
-                  i === 2 && "top-[32vh] left-[25vw] w-[15vw] h-[30vh]",
-                  i === 3 && "-top-[10vh] left-[-25vw] w-[20vw] h-[45vh]",
-                  i === 4 && "left-[27.5vw] w-[25vw] h-[25vh]",
-                  i === 5 && "top-[27.5vh] left-[5vw] w-[20vw] h-[25vh]",
-                  i === 6 && "top-[27.5vh] left-[-22.5vw] w-[30vw] h-[25vh]",
+                  i === 1 && "-top-[30vh] left-[5vw] w-[35vw] h-[30vh] ",
+                  i === 2 &&
+                    "top-[32vh] left-[35vw] w-[25vw] lg:w-[15vw] h-[30vh]",
+                  i === 3 && "-top-[10vh] left-[-25vw] w-[20vw] h-[45vh] ",
+                  i === 4 && "left-[27.5vw] w-[25vw] h-[25vh] ",
+                  i === 5 && "top-[27.5vh] left-[5vw] w-[20vw] h-[25vh] ",
+                  i === 6 && "top-[27.5vh] left-[-22.5vw] w-[30vw] h-[25vh] ",
                   i === 7 && "-top-[30vh] left-[35vw] w-[20vw] h-[30vh]"
                 )}
               >
@@ -89,7 +90,7 @@ const ParallaxGalleryBanner = () => {
                   className="object-cover"
                   fill
                   sizes="700px"
-                  quality={50}
+                  quality={70}
                 />
               </div>
             </motion.div>

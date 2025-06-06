@@ -5,12 +5,11 @@
 
 export const images = {
   homeMock1: "/mocks/home-mock-1.webp",
-  imageMock: "/images/image-mock.webp",
+  homeMock2: "/mocks/home-mock-2.webp",
+  homeMock3: "/mocks/home-mock-3.webp",
 
   CDJ_3000: "/mocks/CDJ-3000.webp",
   DJM_V10: "/mocks/DJM-V10.webp",
-  XDJ_RX3: "/mocks/XDJ-RX3.webp",
-  RMX_1000: "/mocks/RMX-1000.webp",
 
   //? Agregar mas backgrounds aca
 } as const;
@@ -32,11 +31,12 @@ export type LogosKeys = keyof typeof logos;
 export const icons = {
   soundcloud: "/icons/soundcloud.svg",
   spotify: "/icons/spotify.svg",
-  instagram: "/icons/instagram.svg",
   mail: "/icons/mail.svg",
   location: "/icons/location.svg",
   calendar: "/icons/calendar.svg",
   arrow: "/icons/arrow.svg",
+  beatport: "/icons/beatport.svg",
+  youtube: "/icons/youtube.svg",
 
   //? Agregar mas iconos aca
 } as const;
