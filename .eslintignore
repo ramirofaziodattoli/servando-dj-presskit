@@ -1,0 +1,7 @@
+*.d.ts
+next-env.d.ts
+node_modules
+.next
+out
+build
+coverage 

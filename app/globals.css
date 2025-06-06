@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ffffff;
+  --color-secondary: #101010;
+  --color-secondary-lighter: #151515;
+  --color-accent: #c8b6ff;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+  }
+
+  :root {
+    --font-primary: "Bebas Neue", sans-serif;
+    --font-secondary: "Unbounded", sans-serif;
+  }
+
+  html {
+    font-family: var(--font-secondary);
+  }
+
+  body {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    @apply overflow-x-hidden m-0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-primary);
+    font-display: swap;
+  }
+
+  p,
+  span,
+  strong,
+  bold,
+  b {
+    font-family: var(--font-secondary);
+  }
+
+  strong {
+    @apply text-accent font-bold;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .section-px {
+    @apply px-6 md:px-20;
+  }
+
+  .section-py {
+    @apply py-6 md:py-20;
+  }
+
+  .section-pt {
+    @apply pt-6 md:pt-20;
+  }
+
+  .section-pl {
+    @apply pl-6 md:pl-20;
+  }
+
+  .section-pr {
+    @apply pr-6 md:pr-20;
+  }
+
+  .section-pb {
+    @apply pb-6 md:pb-20;
+  }
+
+  .section-mx {
+    @apply mx-6 md:mx-20;
+  }
+
+  .section-my {
+    @apply my-6 md:my-20;
+  }
+
+  .section-mt {
+    @apply mt-6 md:mt-20;
+  }
+
+  .section-mb {
+    @apply mb-6 md:mb-20;
+  }
+
+  .section-max-w {
+    @apply max-w-[1500px] 2xl:max-w-[1700px];
+  }
+
+  .help {
+    @apply border-1 border-red-500;
+  }
+  @keyframes moveInCircle {
+    0% {
+      transform: translate(-30%, -30%);
+    }
+    25% {
+      transform: translate(30%, -30%);
+    }
+    50% {
+      transform: translate(30%, 30%);
+    }
+    75% {
+      transform: translate(-30%, 30%);
+    }
+    100% {
+      transform: translate(-30%, -30%);
+    }
+  }
+
+  @keyframes moveHorizontal {
+    0% {
+      transform: translate(-50%, -10%);
+    }
+    50% {
+      transform: translate(50%, 10%);
+    }
+    100% {
+      transform: translate(-50%, -10%);
+    }
+  }
+
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+}
