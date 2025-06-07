@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { twMerge } from "tailwind-merge";
 
 interface InifiniteCarrouselProps {
   Map?: any[];
@@ -94,7 +95,7 @@ export default function InifiniteCarrousel({
       return Map?.map((text, index) => (
         <span
           key={index}
-          className="text-secondary text-md md:text-xl font-bold uppercase inline-flex items-center h-full whitespace-nowrap"
+          className="text-secondary text-xl font-bold uppercase inline-flex items-center h-full whitespace-nowrap"
         >
           <span className="px-4">{text}</span>
           <span className="opacity-50">•</span>
@@ -106,7 +107,7 @@ export default function InifiniteCarrousel({
           <img
             src={src}
             alt={`Logo ${index}`}
-            className="min-w-[100px] md:min-w-[200px] h-full mx-5"
+            className="min-w-[200px] h-full mx-2 md:mx-5"
           />
         </span>
       ));
@@ -114,7 +115,12 @@ export default function InifiniteCarrousel({
   };
 
   return (
-    <div className="w-full overflow-hidden bg-accent h-[50px] md:h-[100px] flex items-center z-[99]">
+    <div className="w-full overflow-hidden bg-accent h-[100px] flex items-center z-[99] relative">
+      <div
+        className={twMerge(
+          "absolute top-0 left-0 h-full w-[50px] !z-[99] from-accent to-secondary/0 bg-gradient-to-r"
+        )}
+      />
       <div
         ref={marqueeRef}
         className="flex will-change-transform h-full items-center"
@@ -123,6 +129,11 @@ export default function InifiniteCarrousel({
           {renderElements()}
         </div>
       </div>
+      <div
+        className={twMerge(
+          "absolute top-0 right-0 h-full w-[50px] !z-[99] from-accent to-secondary/0 bg-gradient-to-l"
+        )}
+      />
     </div>
   );
 }
