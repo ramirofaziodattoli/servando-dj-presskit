@@ -1,6 +1,8 @@
 import { TechnicalRiderElement } from "./@types";
 import { images } from "./assets";
 
+export const PAGE_URL = "https://servando.dj-presskit.com";
+
 export const DJ_INFO = {
   driveUrl:
     "https://drive.google.com/drive/folders/1tRodJSvXH1ty4YadSt8jNFFYJXFBgHhN?usp=sharing",
