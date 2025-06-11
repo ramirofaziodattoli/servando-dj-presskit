@@ -26,6 +26,10 @@ export const DJ_INFO = {
       icon: "spotify",
       url: "https://open.spotify.com/intl-es/artist/4IL2O8cWbVRcuuhKbuJOJ1",
     },
+    {
+      icon: "instagram",
+      url: "https://www.instagram.com/servandomusic/",
+    },
   ],
   genres: [
     "HOUSE",
@@ -35,7 +39,7 @@ export const DJ_INFO = {
     "DUB TECHNO",
     "INDIE DANCE",
   ],
-  yearsOfExperience: 12,
+  yearsOfExperience: 10,
   totalEvents: 150,
   mixedMinutes: 45825,
 };

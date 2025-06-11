@@ -37,6 +37,7 @@ export const icons = {
   arrow: "/icons/arrow.svg",
   beatport: "/icons/beatport.svg",
   youtube: "/icons/youtube.svg",
+  instagram: "/icons/instagram.svg",
 
   //? Agregar mas iconos aca
 } as const;

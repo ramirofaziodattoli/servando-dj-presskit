@@ -115,10 +115,10 @@ export default function InifiniteCarrousel({
   };
 
   return (
-    <div className="w-full overflow-hidden bg-accent h-[100px] flex items-center z-[99] relative">
+    <div className="w-full overflow-hidden bg-accent h-[100px] flex items-center z-[50] relative">
       <div
         className={twMerge(
-          "absolute top-0 left-0 h-full w-[50px] !z-[99] from-accent to-secondary/0 bg-gradient-to-r"
+          "absolute top-0 left-0 h-full w-[50px] z-[50] from-accent to-secondary/0 bg-gradient-to-r"
         )}
       />
       <div
@@ -131,7 +131,7 @@ export default function InifiniteCarrousel({
       </div>
       <div
         className={twMerge(
-          "absolute top-0 right-0 h-full w-[50px] !z-[99] from-accent to-secondary/0 bg-gradient-to-l"
+          "absolute top-0 right-0 h-full w-[50px] z-[50] from-accent to-secondary/0 bg-gradient-to-l"
         )}
       />
     </div>

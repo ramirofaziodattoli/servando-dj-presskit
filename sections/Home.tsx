@@ -38,18 +38,20 @@ export default function Home() {
                 {DJ_INFO.shortBio}
               </Text>
               <div className="flex mt-10 justify-around lg:justify-start lg:gap-20 w-full lg:w-2/3">
-                {DJ_INFO.socials.map(({ icon, url }, index) => (
-                  <MagneticContainer key={index}>
-                    <LandingLink href={url} newTab key={index}>
-                      <Icon
-                        src={icon as IconKey}
-                        className={twMerge(
-                          "text-accent size-[50px] hover:text-white"
-                        )}
-                      />
-                    </LandingLink>
-                  </MagneticContainer>
-                ))}
+                {DJ_INFO.socials
+                  .filter(({ icon }) => icon !== "instagram")
+                  .map(({ icon, url }, index) => (
+                    <MagneticContainer key={index}>
+                      <LandingLink href={url} newTab key={index}>
+                        <Icon
+                          src={icon as IconKey}
+                          className={twMerge(
+                            "text-accent size-[50px] hover:text-white"
+                          )}
+                        />
+                      </LandingLink>
+                    </MagneticContainer>
+                  ))}
               </div>
             </div>
             <div className="grid place-content-end">
