@@ -16,6 +16,10 @@ export const DJ_INFO = {
   longBio:
     "Servando es un DJ y productor argentino en ascenso dentro de la escena global de la música electrónica. Su enfoque sofisticado y versátil le permite moverse entre los géneros, logrando un sonido único y adaptable a cualquier pista.\n\nHa compartido cabina con artistas como Ezequiel Arias, Budakid, Emi Galván, John Cosani, Grazziano Raffa y muchos más. Ha tocado en clubes y festivales de primer nivel.\n\nSus producciones son editadas por sellos como Mango Alley, Sound Avenue, SLC-6 y más. Sus tracks que resaltan la versatilidad de Servando, hicieron vibrar multitudes en festivales masivos como We Are Lost, Anjuna Deep Explorations, Brunch, The Soundgarden, Mirage, entre otros. Figuras como Hernán Cattáneo, Ezequiel Arias, Tantum, Sahar Z, Mariano Mellino, Eli Nissan y muchos más están apoyando su música, consolidando su proyección internacional.\n\nEl joven productor está trabajando constantemente en su sonido, para exportarlo al mundo y poder hacer llegar su identidad sonora a los oyentes.",
   socials: [
+    {
+      icon: "instagram",
+      url: "https://www.instagram.com/servandomusic/",
+    },
     { icon: "youtube", url: "https://www.youtube.com/@servandomusic " },
     {
       icon: "beatport",
@@ -25,10 +29,6 @@ export const DJ_INFO = {
     {
       icon: "spotify",
       url: "https://open.spotify.com/intl-es/artist/4IL2O8cWbVRcuuhKbuJOJ1",
-    },
-    {
-      icon: "instagram",
-      url: "https://www.instagram.com/servandomusic/",
     },
   ],
   genres: [

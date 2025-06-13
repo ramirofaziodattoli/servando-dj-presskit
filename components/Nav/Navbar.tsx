@@ -95,7 +95,6 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
             animate={{ opacity: 1 }}
             exit={{
               opacity: 0,
-              transition: { delay: (LINK_ITEMS.length * 100) / 1000 },
             }}
             transition={{ duration: 0.5 }}
             className="w-screen h-screen fixed top-0 left-0 bg-secondary justify-center flex flex-col gap-5 lg:justify-start md:pt-[200px] 2xl:pt-0 2xl:justify-center"
@@ -116,7 +115,7 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
                         opacity: 0,
                       }}
                       transition={{
-                        duration: 0.2 * index,
+                        duration: 0.15 * index,
                       }}
                       onClick={() => {
                         setIsOpen(false);
