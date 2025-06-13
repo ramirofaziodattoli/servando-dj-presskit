@@ -50,8 +50,8 @@ export default function About() {
         />
         <div className="absolute w-full section-px lg:!px-0 mx-auto lg:!mx-0 lg:max-w-[600px] h-[600px] lg:h-[800px] right-0">
           <LandingImage
-            src="homeMock2"
-            alt="mock-2"
+            src="homeMock3"
+            alt="mock-3"
             className="object-cover"
             width={1500}
             height={1500}
