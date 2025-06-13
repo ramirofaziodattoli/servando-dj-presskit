@@ -38,6 +38,7 @@ export default function About() {
               />
             </div>
             <Text variant="content">{DJ_INFO.longBio}</Text>
+            
           </div>
         </div>
       </div>
