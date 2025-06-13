@@ -20,6 +20,7 @@ export interface LandingImageProps extends ImageProps {
   className?: string;
   force?: boolean;
   noPreload?: boolean;
+  sizes?: string;
 }
 
 const LandingImage: React.FC<LandingImageProps> = ({
@@ -31,6 +32,7 @@ const LandingImage: React.FC<LandingImageProps> = ({
   width,
   height,
   noPreload = false,
+  sizes,
   ...props
 }) => {
   let source: string;
@@ -55,11 +57,14 @@ const LandingImage: React.FC<LandingImageProps> = ({
     <div ref={ref} className="relative w-full h-full overflow-hidden">
       <Image
         {...props}
-        loading={priority ? undefined : "lazy"}
+        loading={priority ? "eager" : "lazy"}
+        priority={priority}
+        fetchPriority={priority ? "high" : "auto"}
         src={source}
         alt={alt}
         width={width}
         height={height}
+        quality={60}
         onLoad={() => setIsLoaded(true)}
         className={twMerge(
           "transition-opacity duration-500",
