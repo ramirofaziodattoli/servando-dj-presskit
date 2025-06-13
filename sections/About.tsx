@@ -18,7 +18,7 @@ export default function About() {
       />
       <RouteID id={appRoutes.whoIAm} />
       <div className="pt-[50px] lg:pb-[50px] overflow-hidden">
-        <div className="absolute w-full section-px lg:!px-0 mx-auto lg:!mx-0 lg:max-w-[700px] h-[600px] lg:h-auto">
+        <div className="absolute w-full section-px lg:!px-0 mx-auto lg:!mx-0 lg:max-w-[600px] h-[600px] lg:h-[800px]">
           <LandingImage
             src="homeMock2"
             alt="mock-2"
@@ -38,7 +38,6 @@ export default function About() {
               />
             </div>
             <Text variant="content">{DJ_INFO.longBio}</Text>
-            
           </div>
         </div>
       </div>
@@ -49,7 +48,7 @@ export default function About() {
           text={"DJ " + DJ_INFO.name}
           className="absolute top-2 -z-5 left-0 lg:-translate-x-[100vw] xl:-translate-x-[60vw] 2xl:-translate-x-[50vw]"
         />
-        <div className="absolute w-full section-px lg:!px-0 mx-auto lg:!mx-0 lg:max-w-[700px] h-[600px] lg:h-auto right-0">
+        <div className="absolute w-full section-px lg:!px-0 mx-auto lg:!mx-0 lg:max-w-[600px] h-[600px] lg:h-[800px] right-0">
           <LandingImage
             src="homeMock2"
             alt="mock-2"
