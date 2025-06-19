@@ -5,6 +5,7 @@ import AnimatedText from "../components/Text/AnimatedText";
 import Text from "../components/Text/Text";
 import { appRoutes } from "../contants/routes";
 import AnimatedSeparator from "@/components/AnimatedSeparator";
+import { twMerge } from "tailwind-merge";
 
 const getEvents = async () => {
   try {
@@ -31,7 +32,12 @@ export default async function Events() {
   const noPast = !pastEvents || pastEvents.length === 0;
 
   return (
-    <section className="section-py section-px section-max-w mx-auto flex flex-col gap-10">
+    <section
+      className={twMerge(
+        "section-px section-max-w mx-auto flex flex-col gap-10 section-py ",
+        noUpcoming && noPast && "!py-40"
+      )}
+    >
       <RouteID id={appRoutes.nextDates} />
 
       {noUpcoming && !noPast && (

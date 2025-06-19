@@ -46,7 +46,7 @@ export default function Home() {
                         <Icon
                           src={icon as IconKey}
                           className={twMerge(
-                            "text-accent size-[50px] hover:text-white"
+                            "text-accent size-[40px] md:size-[50px] hover:text-white"
                           )}
                         />
                       </LandingLink>

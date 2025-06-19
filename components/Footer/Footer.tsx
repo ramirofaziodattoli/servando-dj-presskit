@@ -31,7 +31,7 @@ const Content = () => {
                 <Icon
                   src={icon as LogosKeys}
                   className={twMerge(
-                    "text-accent size-[50px] hover:text-white"
+                    "text-accent size-[30px] md:size-[50px] hover:text-white"
                   )}
                 />
               </LandingLink>
@@ -40,7 +40,7 @@ const Content = () => {
         </div>
         <div className="flex justify-between flex-col lg:row-start-1 lg:justify-center items-start lg:gap-5 gap-10">
           <div className="flex flex-col gap-2 items-center mx-auto lg:mx-0 lg:flex-row">
-            <Icon src="mail" className="size-8 text-accent" />
+            <Icon src="mail" className="size-[30px] text-accent" />
             <Text variant="content">{DJ_INFO.email}</Text>
           </div>
 
