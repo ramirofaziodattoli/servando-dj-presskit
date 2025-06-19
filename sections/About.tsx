@@ -28,7 +28,7 @@ export default function About() {
             height={1500}
           />
         </div>
-        <div className="w-full section-max-w mx-auto pt-[100px] md:pt-[150px] lg:pl-[25%] 2xl:pl-[20%] lg:!pr-20 pointer-events-none h-[700px] md:h-[750px]">
+        <div className="w-full section-max-w mx-auto pt-[100px] md:pt-[150px] lg:pl-[25%] 2xl:pl-[20%] lg:!pr-20 pointer-events-none h-full">
           <div className="flex items-center section-px py-10 lg:px-40 justify-center gap-10 flex-col bg-gradient-to-t lg:bg-gradient-to-tr lg:p-20 from-secondary via-secondary/80  to-secondary/10 backdrop-blur-xs h-full">
             <div className="">
               <AnimatedText
