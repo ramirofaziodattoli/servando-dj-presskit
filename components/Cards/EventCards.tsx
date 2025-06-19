@@ -64,26 +64,30 @@ const Card: React.FC<CardInterface> = ({
         past && "lg:h-[200px]"
       )}
     >
-      <motion.div
-        className="w-[50%] h-full absolute top-0 left-0 bg-accent"
-        animate={{ x: inView ? "-200%" : 0 }}
-        transition={{
-          duration: 1.2,
-          type: "spring",
-          mass: 0.3,
-          stiffness: 25,
-        }}
-      ></motion.div>
-      <motion.div
-        className="w-[50%] h-full absolute top-0 right-0 bg-accent"
-        animate={{ x: inView ? "200%" : 0 }}
-        transition={{
-          duration: 1.2,
-          type: "spring",
-          mass: 0.3,
-          stiffness: 25,
-        }}
-      ></motion.div>
+      {!past && (
+        <>
+          <motion.div
+            className="w-[50%] h-full absolute top-0 left-0 bg-accent"
+            animate={{ x: inView ? "-200%" : 0 }}
+            transition={{
+              duration: 1.2,
+              type: "spring",
+              mass: 0.3,
+              stiffness: 25,
+            }}
+          ></motion.div>
+          <motion.div
+            className="w-[50%] h-full absolute top-0 right-0 bg-accent"
+            animate={{ x: inView ? "200%" : 0 }}
+            transition={{
+              duration: 1.2,
+              type: "spring",
+              mass: 0.3,
+              stiffness: 25,
+            }}
+          ></motion.div>
+        </>
+      )}
       <Text
         variant="title"
         Tag={"h5"}
@@ -114,7 +118,7 @@ const Card: React.FC<CardInterface> = ({
         </div>
       </div>
       {link && link.trim() !== "" && (
-        <DefaultButton href={link}>BUY TICKETS</DefaultButton>
+        <DefaultButton href={link}>TICKETS</DefaultButton>
       )}
     </motion.article>
   );
