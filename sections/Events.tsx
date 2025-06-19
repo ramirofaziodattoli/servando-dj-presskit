@@ -40,7 +40,7 @@ export default async function Events() {
     >
       <RouteID id={appRoutes.nextDates} />
 
-      {noUpcoming && !noPast && (
+      {noUpcoming && (
         <AnimatedText variant="title" Tag={"h2"} content="EVENTOS" />
       )}
       {noUpcoming && noPast && (
