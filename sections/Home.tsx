@@ -64,60 +64,6 @@ export default function Home() {
                 height={1500}
               />
             </div>
-
-            {/* 
-            //! OPCION DE VINILO 
-             */}
-            {/* <div className="card-3d rounded-full aspect-square">
-              <div className="relative animate-spin-slow overflow-hidden h-fit flex items-center justify-center rounded-full bg-secondary">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-full" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent rounded-full" />
-                <LandingImage
-                  noPreload
-                  priority
-                  src="homeMock3"
-                  alt="home-mock-3"
-                  className="w-full h-auto rounded-full aspect-square object-cover -z-10 scale-90"
-                  style={{
-                    boxShadow: "0 0 300px 300px #000",
-                    filter: "contrast(1.2) brightness(1.05)",
-                  }}
-                  width={500}
-                  height={500}
-                />
-                <div className="size-6 absolute z-50 bg-neutral-900 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]" />
-                <div className="size-20 absolute z-50 border-2 border-accent/50 rounded-full shadow-[0_0_15px_rgba(200,182,255,0.2)]" />
-
-                <div className="absolute inset-0">
-                  {[...Array(30)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute inset-0 rounded-full border border-neutral-800 aspect-square opacity-50"
-                      style={{
-                        transform: `scale(${1 - i * 0.018})`,
-                        boxShadow:
-                          i % 3 === 0
-                            ? "inset 0 0 5px rgba(255,255,255,0.03)"
-                            : "none",
-                        borderWidth: "1px",
-                      }}
-                    />
-                  ))}
-                </div>
-
-                <div
-                  className="absolute inset-0 rounded-full pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 10% 30%, rgba(255,255,255,0.15) 0%, transparent 30%)",
-                    filter: "blur(15px)",
-                    transform: "rotate(20deg)",
-                  }}
-                />
-
-                <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-secondary/30 rounded-full" />
-              </div>
-            </div> */}
           </div>
         </div>
       </GradientBackground>
