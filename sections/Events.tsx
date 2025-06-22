@@ -51,7 +51,7 @@ export default async function Events() {
 
       {!noUpcoming && (
         <>
-          <AnimatedText variant="title" Tag={"h2"} content="PROXIMOS EVENTOS" />
+          <AnimatedText variant="title" Tag={"h2"} content="PRÓXIMOS EVENTOS" />
           <Text
             variant="content"
             className="!text-center max-w-[800px] mx-auto"
