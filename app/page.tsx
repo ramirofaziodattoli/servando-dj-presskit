@@ -13,9 +13,9 @@ export default function Index() {
     <main className="relative">
       <Home />
       <InifiniteCarrousel Map={DJ_INFO.genres} />
-      <Events />
-      <InifiniteCarrousel publicLogos />
       <About />
+      <InifiniteCarrousel publicLogos />
+      <Events />
       <Music />
       <Gallery />
       <TechnicalRider />
