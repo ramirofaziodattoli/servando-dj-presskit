@@ -6,6 +6,7 @@ import Text from "../components/Text/Text";
 import { appRoutes } from "../contants/routes";
 import AnimatedSeparator from "@/components/AnimatedSeparator";
 import { twMerge } from "tailwind-merge";
+import { DJ_INFO } from "@/DATA";
 
 const getEvents = async () => {
   try {
@@ -67,11 +68,17 @@ export default async function Events() {
       {!noUpcoming && !noPast && <AnimatedSeparator />}
       {!noPast && (
         <>
+          <AnimatedText
+            variant="title"
+            Tag={"h2"}
+            content="EVENTOS ANTERIORES"
+          />
           <Text
             variant="content"
             className="!text-center max-w-[800px] mx-auto"
           >
-            Estas fueron las ultimas fechas donde pude compartir mi musica.
+            Estas fueron las últimas fechas en las que Servando compartió su
+            música en vivo.
           </Text>
           <EventCards past events={pastEvents} />
         </>

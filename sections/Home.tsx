@@ -25,7 +25,7 @@ export default function Home() {
       >
         <div className="w-full h-full flex flex-col section-px lg:!px-0 lg:!pl-20 2xl:!px-20 section-max-w mx-auto">
           <div className="flex-1 grid lg:grid-cols-2 gap-10 lg:gap-0 h-full min-h-[calc(100vh-100px)]">
-            <div className="w-full h-full flex flex-col justify-center items-center lg:items-start gap-5 pt-10 lg:pb-20">
+            <div className="w-full h-full flex flex-col justify-center items-center lg:items-start gap-10 pt-10 lg:pb-20">
               <Text
                 Tag={"h1"}
                 variant="custom"
@@ -33,11 +33,10 @@ export default function Home() {
               >
                 {DJ_INFO.name}
               </Text>
-              <p className="text-accent">Electronic Music</p>
-              <Text variant="content" className="">
-                {DJ_INFO.shortBio}
-              </Text>
-              <div className="flex mt-10 justify-around lg:justify-start lg:gap-20 w-full lg:w-2/3">
+              <p className="bg-clip-text text-transparent bg-radial from-primary/50 to-accent">
+                Electronic Music
+              </p>
+              <div className="flex justify-around lg:justify-start lg:gap-20 w-full lg:w-2/3">
                 {DJ_INFO.socials
                   .filter(({ icon }) => icon !== "instagram")
                   .map(({ icon, url }, index) => (
