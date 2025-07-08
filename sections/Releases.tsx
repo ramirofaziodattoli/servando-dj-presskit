@@ -19,7 +19,7 @@ const getReleases = async () => {
 
 export const dynamic = "force-dynamic";
 
-export default async function Music() {
+export default async function Releases() {
   const releases = await getReleases();
 
   const noReleases = releases.length === 0;
@@ -43,8 +43,7 @@ export default async function Music() {
             variant="content"
             className="!text-center max-w-[800px] mx-auto"
           >
-            Estos son los próximos lanzamientos confirmados. ¡No te pierdas
-            ninguna novedad musical!
+            Estos son los próximos lanzamientos confirmados.
           </Text>
           <ReleaseCards releases={releases} />
         </>

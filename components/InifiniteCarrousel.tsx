@@ -22,7 +22,7 @@ export default function InifiniteCarrousel({
 
     const loadImages = async () => {
       const checks = await Promise.all(
-        Array.from({ length: 15 }).map((_, index) => {
+        Array.from({ length: 13 }).map((_, index) => {
           const imgSrc = `/logos/public/public-${index}.svg`;
           return new Promise<string | null>((resolve) => {
             const img = new Image();
