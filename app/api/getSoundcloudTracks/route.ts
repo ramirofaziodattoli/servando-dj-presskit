@@ -31,6 +31,24 @@ async function getAccessToken() {
     if (!tokenResponse.ok) {
       const errorText = await tokenResponse.text();
       console.error("Error obteniendo token:", errorText);
+      // Intentar parsear el reset_time si es 429
+      if (tokenResponse.status === 429) {
+        try {
+          const errorJson = JSON.parse(errorText);
+          const resetTime =
+            errorJson?.errors?.[0]?.meta?.rate_limit?.reset_time;
+          if (resetTime) {
+            console.error(
+              `[SoundCloud][RATE LIMIT] El ban se levanta a las: ${resetTime}`
+            );
+          }
+        } catch (e) {
+          console.error(
+            "No se pudo parsear el reset_time del error 429:",
+            errorText
+          );
+        }
+      }
       throw new Error(`Error obteniendo token: ${tokenResponse.status}`);
     }
 
@@ -105,6 +123,64 @@ async function getUserTracks(userUrn: string, accessToken: string) {
   }
 }
 
+// --- CACHE Y LOGGING MODULAR ---
+
+// Configuración de cache
+const CACHE_DURATION = 3 * 60 * 60 * 1000; // 3 horas en ms
+let tracksCache: any = null;
+let cacheTimestamp: number = 0;
+
+function isCacheValid() {
+  return tracksCache && Date.now() - cacheTimestamp < CACHE_DURATION;
+}
+
+function setCache(data: any) {
+  tracksCache = data;
+  cacheTimestamp = Date.now();
+  logInfo(
+    `Tracks guardados en cache a las: ${new Date(cacheTimestamp).toISOString()}`
+  );
+}
+
+function getCache() {
+  logInfo(
+    `Sirviendo tracks desde cache. Última actualización: ${new Date(
+      cacheTimestamp
+    ).toISOString()}`
+  );
+  return {
+    success: true,
+    tracks: tracksCache.collection || [],
+    total_tracks: tracksCache.collection?.length || 0,
+    total_available: tracksCache.total_available || 0,
+    from_cache: true,
+    cache_timestamp: cacheTimestamp,
+  };
+}
+
+function logInfo(...args: any[]) {
+  console.log("[SoundCloud][INFO]", ...args);
+}
+function logError(...args: any[]) {
+  console.error("[SoundCloud][ERROR]", ...args);
+}
+
+function logRateLimitError(error: any) {
+  try {
+    const errorJson = typeof error === "string" ? JSON.parse(error) : error;
+    const resetTime = errorJson?.errors?.[0]?.meta?.rate_limit?.reset_time;
+    logError(
+      "¡Límite de rate alcanzado! reset_time:",
+      resetTime,
+      "Detalles:",
+      errorJson
+    );
+  } catch (parseErr) {
+    logError("Error 429 recibido pero no se pudo parsear el cuerpo:", error);
+  }
+}
+// --- FIN CACHE Y LOGGING MODULAR ---
+
 export async function GET() {
   const SOUNDCLOUD_USER_URN = process.env.SOUNDCLOUD_USER_URN;
 
@@ -115,29 +191,39 @@ export async function GET() {
     );
   }
 
+  // 1. Revisar si hay cache vigente
+  if (isCacheValid()) {
+    return NextResponse.json(getCache());
+  }
+
   try {
     // Paso 1: Obtener access token
-    console.log("Obteniendo access token...");
+    logInfo("Obteniendo access token...");
     const accessToken = await getAccessToken();
-    console.log("Access token obtenido exitosamente");
+    logInfo("Access token obtenido exitosamente");
 
     // Paso 2: Obtener tracks del usuario
-    console.log("Obteniendo tracks del usuario:", SOUNDCLOUD_USER_URN);
+    logInfo("Obteniendo tracks del usuario:", SOUNDCLOUD_USER_URN);
     const tracksData = await getUserTracks(SOUNDCLOUD_USER_URN, accessToken);
-    console.log(
-      "Tracks obtenidos:",
-      tracksData.collection?.length || 0,
-      "tracks"
-    );
+    logInfo("Tracks obtenidos:", tracksData.collection?.length || 0, "tracks");
+
+    // Guardar en cache
+    setCache(tracksData);
 
     return NextResponse.json({
       success: true,
       tracks: tracksData.collection || [],
       total_tracks: tracksData.collection?.length || 0,
       total_available: tracksData.total_available || 0,
+      from_cache: false,
+      cache_timestamp: cacheTimestamp,
     });
-  } catch (error) {
-    console.error("Error en getSoundcloudTracks:", error);
+  } catch (error: any) {
+    // Si es error 429, loguear el reset_time si existe
+    if (error.message?.includes("429")) {
+      logRateLimitError(error.message);
+    }
+    logError("Error en getSoundcloudTracks:", error);
     return NextResponse.json(
       {
         error: "Error al obtener tracks de SoundCloud",
