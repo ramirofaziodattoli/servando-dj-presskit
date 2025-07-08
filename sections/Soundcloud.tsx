@@ -1,38 +1,72 @@
+"use client";
+import { useEffect, useState } from "react";
 import AnimatedText from "../components/Text/AnimatedText";
 import { twMerge } from "tailwind-merge";
-import SoundCloudCards from "../components/Cards/SoundCloudCards";
 import RouteID from "@/components/RouteID";
 import { appRoutes } from "@/contants/routes";
+import SoundCloudCards from "@/components/Cards/SoundCloudCards";
 
-const getSoundcloudTracks = async () => {
+const CACHE_KEY = "soundcloudTracks";
+const CACHE_TIME = 3 * 60 * 60 * 1000; // 3 horas en ms
+
+function getCachedTracks() {
+  if (typeof window === "undefined") return null;
+  const cache = localStorage.getItem(CACHE_KEY);
+  if (!cache) return null;
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL || ""}/api/getSoundcloudTracks`,
-      { cache: "no-cache" }
-    );
-    const data = await res.json();
-
-    // Log para debugging
-    console.log("SoundCloud API Response:", data);
-
-    if (data.error) {
-      console.error("Error en SoundCloud API:", data.error, data.details);
-      return [];
+    const { data, timestamp } = JSON.parse(cache);
+    if (Date.now() - timestamp < CACHE_TIME) {
+      return data;
     }
-
-    return data.tracks || [];
   } catch (e) {
-    console.error("Error fetching SoundCloud tracks:", e);
-    return [];
+    // Si el cache está corrupto, lo ignoramos
+    return null;
   }
-};
+  return null;
+}
 
-export const dynamic = "force-dynamic";
+function setCachedTracks(data: any) {
+  localStorage.setItem(
+    CACHE_KEY,
+    JSON.stringify({ data, timestamp: Date.now() })
+  );
+}
 
-export default async function Soundcloud() {
-  const tracks = await getSoundcloudTracks();
-  const noTracks = tracks.length === 0;
+function useSoundcloudTracks() {
+  const [tracks, setTracks] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const cached = getCachedTracks();
+    if (cached) {
+      setTracks(cached);
+      setLoading(false);
+    } else {
+      fetch("/api/getSoundcloudTracks")
+        .then((res) => res.json())
+        .then((data) => {
+          setTracks(data.tracks || []);
+          setCachedTracks(data.tracks || []);
+        })
+        .catch((e) => {
+          setTracks([]);
+        })
+        .finally(() => setLoading(false));
+    }
+  }, []);
+
+  return { tracks, loading };
+}
+
+export default function Soundcloud() {
+  const { tracks, loading } = useSoundcloudTracks();
+  const noTracks = !loading && tracks.length === 0;
+
+  if (loading) {
+    return (
+      <div className="py-20 text-center">Cargando tracks de SoundCloud...</div>
+    );
+  }
   if (noTracks) {
     return <></>;
   }
