@@ -106,11 +106,11 @@ async function getUserTracks(userUrn: string, accessToken: string) {
 }
 
 export async function GET() {
-  const SOUNDCLOUD_USER_URN = process.env.SOUNDCLOUD_USER_ID;
+  const SOUNDCLOUD_USER_URN = process.env.SOUNDCLOUD_USER_URN;
 
   if (!SOUNDCLOUD_USER_URN) {
     return NextResponse.json(
-      { error: "Falta SOUNDCLOUD_USER_ID en las variables de entorno" },
+      { error: "Falta SOUNDCLOUD_USER_URN en las variables de entorno" },
       { status: 400 }
     );
   }

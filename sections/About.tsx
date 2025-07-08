@@ -16,7 +16,6 @@ export default function About() {
           "absolute top-0 h-[100px] w-screen z-[50] from-secondary to-secondary/0 bg-gradient-to-b"
         )}
       />
-      <RouteID id={appRoutes.whoIAm} />
       <div className="pt-[50px] lg:pb-[50px] overflow-hidden">
         <div className="absolute w-full section-px lg:!px-0 mx-auto lg:!mx-0 lg:max-w-[600px] h-[600px] lg:h-[800px]">
           <LandingImage

@@ -6,7 +6,7 @@ import Gallery from "@/sections/Gallery";
 import TechnicalRider from "@/sections/TechnicalRider";
 import Contacto from "@/sections/Contact";
 import { DJ_INFO } from "@/DATA";
-import Music from "@/sections/Music";
+import Releases from "@/sections/Releases";
 import Soundcloud from "@/sections/Soundcloud";
 
 export default function Index() {
@@ -18,7 +18,7 @@ export default function Index() {
       <InifiniteCarrousel publicLogos />
       <Events />
       <Soundcloud />
-      <Music />
+      <Releases />
       <Gallery />
       <TechnicalRider />
       <Contacto />

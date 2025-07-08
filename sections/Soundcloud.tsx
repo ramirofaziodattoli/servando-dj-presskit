@@ -1,7 +1,8 @@
 import AnimatedText from "../components/Text/AnimatedText";
-import Text from "../components/Text/Text";
 import { twMerge } from "tailwind-merge";
 import SoundCloudCards from "../components/Cards/SoundCloudCards";
+import RouteID from "@/components/RouteID";
+import { appRoutes } from "@/contants/routes";
 
 const getSoundcloudTracks = async () => {
   try {
@@ -43,15 +44,10 @@ export default async function Soundcloud() {
         noTracks && "!py-40"
       )}
     >
+      <RouteID id={appRoutes.music} />
       <AnimatedText variant="title" Tag={"h2"} content="SOUNDCLOUD" />
       {!noTracks && (
         <>
-          <Text
-            variant="content"
-            className="!text-center max-w-[800px] mx-auto"
-          >
-            Estos son los últimos tracks publicados en SoundCloud.
-          </Text>
           <SoundCloudCards tracks={tracks} />
         </>
       )}

@@ -1,8 +1,8 @@
 export const appRoutes = {
-  nextDates: "events",
-  whoIAm: "who-i-am",
   bio: "bio",
-  technicalRider: "technical-rider",
+  nextDates: "events",
+  music: "music",
   gallery: "gallery",
+  technicalRider: "technical-rider",
   contact: "contact",
 } as const;

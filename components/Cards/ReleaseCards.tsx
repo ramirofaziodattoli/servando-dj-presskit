@@ -6,7 +6,6 @@ import Icon from "../Icons/Icon";
 import { Release } from "@/@types";
 import DefaultButton from "../Buttons/DefaultButton";
 import { UseIsMobile } from "@/hooks/UseIsMobile";
-import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 interface ReleaseCardsProps {
@@ -47,27 +46,13 @@ interface CardProps extends Release {
 }
 
 const Card: React.FC<CardProps> = ({ date, index, name, recordLabel }) => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
-
   return (
     <motion.article
-      ref={ref}
-      style={{ boxShadow: "6px 6px 2px var(--color-accent)" }}
+      style={{ boxShadow: "4px 4px 2px var(--color-accent)" }}
       className={twMerge(
         "bg-secondary-lighter relative overflow-hidden shadow-md max-w-[500px] flex flex-col items-center justify-around aspect-square mx-auto p-8 w-full gap-8"
       )}
     >
-      <motion.div
-        className="w-full h-full absolute top-0 left-0 bg-accent"
-        animate={{ x: inView ? "200%" : 0, y: inView ? "200%" : 0 }}
-        transition={{
-          duration: 1.2,
-          type: "spring",
-          mass: 0.3,
-          stiffness: 25,
-        }}
-      ></motion.div>
-
       <Text variant="subtitle" Tag={"h5"} className={twMerge("!text-center")}>
         {name}
       </Text>
