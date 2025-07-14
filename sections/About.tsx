@@ -27,6 +27,7 @@ export default function About() {
           />
         </div>
         <div className="w-full section-max-w mx-auto pt-[100px] md:pt-[150px] lg:pl-[25%] 2xl:pl-[20%] lg:!pr-20 pointer-events-none h-full min-h-[700px]">
+          <RouteID id={appRoutes.bio} />
           <div className="flex items-center section-px py-10 lg:px-40 justify-center gap-10 flex-col bg-gradient-to-t lg:bg-gradient-to-tr lg:p-20 from-secondary via-secondary/80  to-secondary/10 backdrop-blur-xs h-full">
             <div className="">
               <AnimatedText
@@ -41,7 +42,6 @@ export default function About() {
         </div>
       </div>
       <div className="pt-[50px] lg:pb-[50px] relative">
-        <RouteID id={appRoutes.bio} />
         <InfiniteTextMoveOnScroll
           rotateOnLg
           text={"DJ " + DJ_INFO.name}

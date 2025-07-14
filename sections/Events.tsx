@@ -6,7 +6,6 @@ import Text from "../components/Text/Text";
 import { appRoutes } from "../contants/routes";
 import AnimatedSeparator from "@/components/AnimatedSeparator";
 import { twMerge } from "tailwind-merge";
-import { DJ_INFO } from "@/DATA";
 
 const getEvents = async () => {
   try {
