@@ -24,7 +24,7 @@ const TechnicalRiderCard: React.FC<TechnicalRiderCardProps> = ({
     <motion.article
       ref={ref}
       className={twMerge(
-        "bg-secondary-lighter relative overflow-hidden p-5 md:p-8 gap-5 flex flex-col  md:w-full xl:h-[40vh] min-h-[400px] lg:min-h-[500px] justify-between",
+        "bg-secondary-lighter relative overflow-hidden p-5 md:p-8 gap-5 flex flex-col w-full xl:h-[40vh] min-h-[400px] lg:min-h-[500px] justify-between",
         className
       )}
     >
