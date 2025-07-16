@@ -107,7 +107,10 @@ export default function InifiniteCarrousel({
           <img
             src={src}
             alt={`Logo ${index}`}
-            className="min-w-[200px] h-full mx-2 md:mx-5"
+            className={twMerge(
+              "min-w-[200px] h-full mx-2 md:mx-5",
+              index === 2 && "scale-150"
+            )}
           />
         </span>
       ));

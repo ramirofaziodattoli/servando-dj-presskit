@@ -9,8 +9,33 @@ import LandingLink from "../components/LandingLink/LandingLink";
 import { motion } from "framer-motion";
 import GradientBackground from "../components/AnimatedBackgrounds/GradientBackground";
 import MagneticContainer from "../components/Buttons/MagneticContainer";
+import { useEffect, useState } from "react";
+import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
 
 export default function Home() {
+  const [isTabActive, setIsTabActive] = useState(true);
+  const [isBirthday, setIsBirthday] = useState(false);
+
+  useEffect(() => {
+    // Verifica si hoy es 16 de julio
+    const today = new Date();
+    if (today.getMonth() === 6 && today.getDate() === 16) {
+      setTimeout(() => {
+        setIsBirthday(true);
+      }, 3000);
+    } else {
+      setIsBirthday(false);
+    }
+    // Mantener la lógica de visibilidad de la pestaña si se requiere para otros usos
+    const handleVisibility = () => {
+      setIsTabActive(!document.hidden);
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ y: 300 }}
@@ -19,6 +44,18 @@ export default function Home() {
         transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1], delay: 1.2 },
       }}
     >
+      {isBirthday && isTabActive && (
+        <>
+          <Fireworks
+            autorun={{ speed: 0.3, delay: 3 }}
+            className="z-[100] bg-transparent fixed top-0 pointer-events-none w-screen h-screen"
+          />
+          <Fireworks
+            autorun={{ speed: 0.2, delay: 5 }}
+            className="z-[100] bg-transparent fixed top-0 pointer-events-none w-screen h-screen"
+          />
+        </>
+      )}
       <GradientBackground
         followCursor
         containerClassName="min-h-screen xl:h-screen  pt-[100px] xl:pt-0 overflow-hidden bg-secondary"
