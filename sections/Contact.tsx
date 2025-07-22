@@ -7,8 +7,6 @@ import { toast } from "sonner";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import DefaultButton from "../components/Buttons/DefaultButton";
 import { twMerge } from "tailwind-merge";
-import AnimatedText from "../components/Text/AnimatedText";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Text from "../components/Text/Text";
 import { DJ_INFO } from "@/DATA";
 
@@ -112,7 +110,9 @@ const ContactForm: React.FC<ContactFormProps> = ({}) => {
   return (
     <section className="section-max-w section-px mx-auto !py-14 md:!py-20">
       <div className="flex flex-col items-center">
-        <AnimatedText Tag={"h2"} variant="title" content="CONTACTO" />
+        <Text Tag={"h2"} variant="title">
+          CONTACTO
+        </Text>
         <Text variant="content" className="!text-center max-w-[800px] mx-auto">
           Completá el formulario con los detalles y nos pondremos en contacto lo
           antes posible. Ya sea para <strong>{DJ_INFO.eventTypes}</strong> cada

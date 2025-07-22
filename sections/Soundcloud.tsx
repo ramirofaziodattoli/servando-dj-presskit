@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import AnimatedText from "../components/Text/AnimatedText";
 import { twMerge } from "tailwind-merge";
 import RouteID from "@/components/RouteID";
 import { appRoutes } from "@/contants/routes";
 import SoundCloudCards from "@/components/Cards/SoundCloudCards";
+import Text from "@/components/Text/Text";
 
 const CACHE_KEY = "soundcloudTracks";
 const CACHE_TIME = 3 * 60 * 60 * 1000; // 3 horas en ms
@@ -79,7 +79,9 @@ export default function Soundcloud() {
       )}
     >
       <RouteID id={appRoutes.music} />
-      <AnimatedText variant="title" Tag={"h2"} content="SOUNDCLOUD" />
+      <Text variant="title" Tag={"h2"}>
+        SoundCloud
+      </Text>
       {!noTracks && (
         <>
           <SoundCloudCards tracks={tracks} />

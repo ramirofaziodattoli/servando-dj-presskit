@@ -83,7 +83,6 @@ const Card: React.FC<CardProps> = ({
         className={twMerge(
           "bg-secondary-lighter hover:!shadow-none transition duration-300 relative overflow-hidden shadow-md max-w-[500px] flex flex-col items-center justify-end aspect-square mx-auto p-0 w-full group"
         )}
-        style={{ boxShadow: "4px 4px 2px var(--color-accent)" }}
       >
         {/* Imagen de fondo */}
         <div className="absolute inset-0 w-full h-full">

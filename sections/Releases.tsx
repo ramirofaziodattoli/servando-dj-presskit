@@ -1,5 +1,4 @@
 import ReleaseCards from "@/components/Cards/ReleaseCards";
-import AnimatedText from "../components/Text/AnimatedText";
 import Text from "../components/Text/Text";
 import { twMerge } from "tailwind-merge";
 
@@ -35,16 +34,12 @@ export default async function Releases() {
         noReleases && "!py-40"
       )}
     >
-      <AnimatedText variant="title" Tag={"h2"} content="LANZAMIENTOS" />
+      <Text variant="title" Tag={"h2"}>
+        LANZAMIENTOS
+      </Text>
 
       {!noReleases && (
         <>
-          <Text
-            variant="content"
-            className="!text-center max-w-[800px] mx-auto"
-          >
-            Estos son los próximos lanzamientos confirmados.
-          </Text>
           <ReleaseCards releases={releases} />
         </>
       )}

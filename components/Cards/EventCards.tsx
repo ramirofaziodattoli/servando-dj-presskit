@@ -67,41 +67,34 @@ const Card: React.FC<CardInterface> = ({
       {!past && (
         <>
           <motion.div
-            className="w-[50%] h-full absolute top-0 left-0 bg-accent"
+            className="w-[50%] h-full absolute top-0 left-0 bg-accent z-30"
             animate={{ x: inView ? "-200%" : 0 }}
             transition={{
-              duration: 1.2,
-              type: "spring",
-              mass: 0.3,
-              stiffness: 25,
+              duration: 1,
+              ease: [0.39, -0.02, 0.29, 1.14],
             }}
           ></motion.div>
           <motion.div
-            className="w-[50%] h-full absolute top-0 right-0 bg-accent"
+            className="w-[50%] h-full absolute top-0 right-0 bg-accent z-30"
             animate={{ x: inView ? "200%" : 0 }}
             transition={{
-              duration: 1.2,
-              type: "spring",
-              mass: 0.3,
-              stiffness: 25,
+              duration: 1,
+              ease: [0.39, -0.02, 0.29, 1.14],
             }}
           ></motion.div>
         </>
       )}
-      <Text
-        variant="title"
-        Tag={"h5"}
-        className={twMerge(
-          "lg:text-left lg:!text-5xl lg:flex-1 !font-normal xl:!text-6xl"
-        )}
-      >
-        {name}
-      </Text>
+      <div className="lg:w-[200px] xl:!w-xl">
+        <Text variant="subtitle" Tag={"h5"}>
+          {name}
+        </Text>
+      </div>
       <div className="w-full h-[0.2px] bg-[#272727] lg:w-[0.2px] lg:h-full" />
       <div
         className={twMerge(
           "flex flex-col items-center gap-8 lg:flex-2 lg:items-start lg:pl-10",
-          past && "flex-row justify-around"
+          past &&
+            "md:flex-row justify-around lg:justify-start lg:gap-10 xl:gap-20"
         )}
       >
         <div className="flex flex-col items-center gap-2">

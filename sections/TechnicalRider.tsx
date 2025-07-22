@@ -5,13 +5,14 @@ import RouteID from "../components/RouteID";
 import { twMerge } from "tailwind-merge";
 import TechnicalRiderCard from "../components/Cards/TechnicalRiderCard";
 import DefaultButton from "../components/Buttons/DefaultButton";
-import AnimatedText from "../components/Text/AnimatedText";
 
 export default function TechnicalRider() {
   return (
     <section className="section-py section-px flex flex-col gap-10 md:grid md:place-items-center section-max-w mx-auto">
       <RouteID id={appRoutes.technicalRider} />
-      <AnimatedText Tag={"h2"} variant="title" content="RIDER TÉCNICO" />
+      <Text Tag={"h2"} variant="title">
+        RIDER TÉCNICO
+      </Text>
       <Text variant="content" className="!text-center max-w-[800px] mx-auto">
         Para garantizar una experiencia <strong>óptima</strong> en cada
         presentación, se requiere el siguiente equipamiento:

@@ -9,7 +9,7 @@ import {
 import { useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
-import AnimatedText from "../Text/AnimatedText";
+import Text from "../Text/Text";
 
 const ParallaxGalleryBanner = () => {
   const container = useRef(null);
@@ -55,7 +55,7 @@ const ParallaxGalleryBanner = () => {
     <section
       ref={container}
       className={twMerge(
-        "h-[200vh] relative bg-gradient-to-b from-secondary  to-secondary-lighter  section-mt section-pt"
+        "h-[200vh] relative bg-gradient-to-b from-secondary to-secondary-lighter section-mt section-pt"
       )}
     >
       <div className={twMerge("sticky overflow-hidden top-0 h-screen")}>
@@ -89,8 +89,10 @@ const ParallaxGalleryBanner = () => {
                   alt="image"
                   className="object-cover"
                   fill
-                  sizes="700px"
-                  quality={70}
+                  sizes="(max-width: 900px) 100vw, 700px"
+                  quality={60}
+                  priority={i < 2}
+                  loading={i < 2 ? "eager" : "lazy"}
                 />
               </div>
             </motion.div>
@@ -107,7 +109,7 @@ const ParallaxGalleryBanner = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <AnimatedText content="GALERÍA" variant="title" />
+              <Text variant="title">GALERÍA</Text>
             </motion.div>
           )}
         </AnimatePresence>

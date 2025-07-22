@@ -1,11 +1,10 @@
 import { Event } from "@/@types";
 import EventCards from "../components/Cards/EventCards";
 import RouteID from "../components/RouteID";
-import AnimatedText from "../components/Text/AnimatedText";
 import Text from "../components/Text/Text";
 import { appRoutes } from "../contants/routes";
-import AnimatedSeparator from "@/components/AnimatedSeparator";
 import { twMerge } from "tailwind-merge";
+import AnimatedSeparator from "@/components/AnimatedSeparator";
 
 const getEvents = async () => {
   try {
@@ -40,9 +39,7 @@ export default async function Events() {
     >
       <RouteID id={appRoutes.nextDates} />
 
-      {noUpcoming && (
-        <AnimatedText variant="title" Tag={"h2"} content="EVENTOS" />
-      )}
+     
       {noUpcoming && noPast && (
         <Text variant="content" className="!text-center max-w-[800px] mx-auto">
           Próximas fechas a confirmar. ¡Estate atento a las próximas novedades!
@@ -51,15 +48,11 @@ export default async function Events() {
 
       {!noUpcoming && (
         <>
-          <AnimatedText variant="title" Tag={"h2"} content="PRÓXIMOS EVENTOS" />
-          <Text
-            variant="content"
-            className="!text-center max-w-[800px] mx-auto"
-          >
-            Estas son las próximas fechas confirmadas donde vas a poder
-            disfrutar de un set en vivo cargado de energía, ritmos intensos y
-            pura conexión.
+          <Text variant="title" Tag={"h2"}>
+            PRÓXIMOS
+            <br className="md:hidden" /> EVENTOS
           </Text>
+
           <EventCards events={upcomingEvents} />
         </>
       )}
@@ -67,18 +60,11 @@ export default async function Events() {
       {!noUpcoming && !noPast && <AnimatedSeparator />}
       {!noPast && (
         <>
-          <AnimatedText
-            variant="title"
-            Tag={"h2"}
-            content="EVENTOS ANTERIORES"
-          />
-          <Text
-            variant="content"
-            className="!text-center max-w-[800px] mx-auto"
-          >
-            Estas fueron las últimas fechas en las que Servando compartió su
-            música en vivo.
+          <Text variant="title" Tag={"h2"}>
+            EVENTOS
+            <br className="md:hidden" /> ANTERIORES
           </Text>
+
           <EventCards past events={pastEvents} />
         </>
       )}

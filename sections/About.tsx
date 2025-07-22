@@ -5,7 +5,6 @@ import Counter from "../components/Counter";
 import { twMerge } from "tailwind-merge";
 import InfiniteTextMoveOnScroll from "../components/InfiniteTextMoveOnScroll";
 import RouteID from "../components/RouteID";
-import AnimatedText from "../components/Text/AnimatedText";
 import { appRoutes } from "@/contants/routes";
 
 export default function About() {
@@ -30,12 +29,9 @@ export default function About() {
           <RouteID id={appRoutes.bio} />
           <div className="flex items-center section-px py-10 lg:px-40 justify-center gap-10 flex-col bg-gradient-to-t lg:bg-gradient-to-tr lg:p-20 from-secondary via-secondary/80  to-secondary/10 backdrop-blur-xs h-full">
             <div className="">
-              <AnimatedText
-                Tag={"h2"}
-                variant="title"
-                className="uppercase"
-                content="BIO"
-              />
+              <Text Tag={"h2"} variant="title">
+                BIO
+              </Text>
             </div>
             <Text variant="content">{DJ_INFO.longBio}</Text>
           </div>
@@ -106,7 +102,7 @@ const TextBlock: React.FC<{ title: string; desc: string }> = ({
         {title}
       </Text>
       <Text variant="content" className="lg:text-left" Tag={"p"}>
-        {desc}
+        {desc}.
       </Text>
     </div>
   );

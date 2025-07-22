@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { LINK_ITEMS } from "./LinksItems";
 import Text from "../Text/Text";
 import GradientBackground from "../AnimatedBackgrounds/GradientBackground";
+import { useLenis } from "lenis/react";
 
 export interface NavBarProps {}
 
@@ -13,6 +14,7 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const lenis = useLenis();
 
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (latest) => {
@@ -49,7 +51,11 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
         <motion.div
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="w-full max-w-[150px] md:max-w-[250px] h-full z-[80] md:z-0 cursor-pointer hover:text-accent"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            if (lenis) {
+              lenis.scrollTo(0, { lerp: 0.1 });
+            }
+          }}
         >
           <LandingImage
             alt="logo"
@@ -120,10 +126,10 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
                       onClick={() => {
                         setIsOpen(false);
                         setTimeout(() => {
-                          document.getElementById(href)?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center",
-                          });
+                          const target = document.getElementById(href);
+                          if (target && lenis) {
+                            lenis.scrollTo(target, { offset: -80, lerp: 0.1 }); // Ajusta el offset según la altura de tu navbar
+                          }
                         }, 500);
                       }}
                       className="cursor-pointer lg:group-hover:translate-x-20 transition-transform duration-500"

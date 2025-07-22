@@ -1,3 +1,4 @@
+"use client";
 import RouteID from "../components/RouteID";
 import { appRoutes } from "@/contants/routes";
 import ParallaxGalleryBanner from "../components/Gallery/ParallaxGalleryBanner";
