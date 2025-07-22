@@ -97,13 +97,13 @@ const Card: React.FC<CardInterface> = ({
             "md:flex-row justify-around lg:justify-start lg:gap-10 xl:gap-20"
         )}
       >
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 lg:min-w-[200px] lg:items-start">
           <Icon src="calendar" className="text-accent size-5 lg:self-start" />
           <Text variant="content" className="font-normal">
             {date}
           </Text>
         </div>
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2 lg:min-w-[200px] lg:items-start">
           <Icon src="location" className="text-accent size-5 lg:self-start" />
           <Text variant="content" className="font-normal">
             {location}
