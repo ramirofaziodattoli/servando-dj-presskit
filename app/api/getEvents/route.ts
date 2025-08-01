@@ -69,7 +69,7 @@ export async function GET() {
 
     const pastRes = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: `${SHEET_PAST}!B2:E`,
+      range: `${SHEET_PAST}!B2:D`,
     });
     const pastRows = pastRes.data.values || [];
     const pastEvents = sortByDateDesc(
